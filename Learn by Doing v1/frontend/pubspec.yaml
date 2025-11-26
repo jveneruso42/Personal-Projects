@@ -1,0 +1,70 @@
+name: learn_by_doing_v1
+description: "Learn by Doing v1 - Simplified learning management application"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  
+  # HTTP client for API requests
+  dio: ^5.9.0
+  http: ">=0.13.3 <2.0.0"
+  
+  # Router for navigation
+  go_router: ^17.0.0
+  
+  # State management
+  flutter_riverpod: ^3.0.3
+  provider: ^6.1.5+1
+  
+  # Fonts
+  google_fonts: ^6.3.2
+  
+  # Image processing
+  image: ^4.1.0
+  
+  # Modern web APIs (WASM compatible)
+  web: ^1.1.0
+  
+  # Flutter web plugins
+  flutter_web_plugins:
+    sdk: flutter
+    
+  shared_preferences: ^2.5.3
+  
+  # YAML parsing for version reading
+  yaml: ^3.0.0
+  
+  # UUID generation
+  uuid: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  
+  # Testing dependencies
+  mockito: ^5.4.4
+  integration_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - pubspec.yaml
+
+  fonts:
+    - family: ComicNeue
+      fonts:
+        - asset: assets/fonts/ComicNeue-Bold.ttf
+          weight: 700
