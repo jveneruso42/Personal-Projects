@@ -2,17 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../main.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final String? userName;
   final String? desiredName;
 
-  const HomeScreen({
-    super.key,
-    this.userName,
-    this.desiredName,
-  });
+  const HomeScreen({super.key, this.userName, this.desiredName});
 
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();
@@ -188,7 +183,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             ),
                           ),
                           const SizedBox(height: 24),
-                          
+
                           // Quick stats
                           Wrap(
                             spacing: 16,
@@ -272,14 +267,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         selectedItemColor: const Color(0xFF1B5E20),
         unselectedItemColor: Colors.grey,
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: 'Menu',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
         ],
       ),
     );
@@ -315,10 +304,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           const SizedBox(height: 4),
           Text(
             label,
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.grey[700],
-            ),
+            style: TextStyle(fontSize: 12, color: Colors.grey[700]),
             textAlign: TextAlign.center,
           ),
         ],

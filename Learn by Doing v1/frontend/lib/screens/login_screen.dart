@@ -115,9 +115,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       password: _passwordController.text,
     );
 
-    if (!result.isValid) {
+    if (!(result['isValid'] as bool)) {
       setState(() {
-        _errorMessage = result.errors.first;
+        _errorMessage = (result['errors'] as List).first.toString();
         _isLoading = false;
       });
       return;
@@ -272,15 +272,16 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     // Use centralized validator for ALL signup fields
     final result = SignupCredentialsValidator.validate(
       email: _emailController.text,
+      username:
+          _emailController.text.split('@')[0], // Generate username from email
       password: _passwordController.text,
       firstName: _firstNameController.text,
       lastName: _lastNameController.text,
-      desiredName: _desiredNameController.text,
     );
 
-    if (!result.isValid) {
+    if (!(result['isValid'] as bool)) {
       setState(() {
-        _errorMessage = result.errors.first;
+        _errorMessage = (result['errors'] as List).first.toString();
         _isLoading = false;
       });
       return;

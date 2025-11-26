@@ -33,6 +33,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   PasswordValidation _passwordValidation = PasswordValidation(
     isValid: false,
     errors: [],
+    strength: 0.0,
     strengthLevel: 'weak',
     strengthScore: 0.0,
   );

@@ -67,7 +67,7 @@ def get_user_by_username(db: Session, username: str) -> Optional[User]:
     return db.query(User).filter(User.username == username).first()
 
 
-def user_exists(db: Session, email: str = None, username: str = None) -> bool:
+def user_exists(db: Session, email: Optional[str] = None, username: Optional[str] = None) -> bool:
     """
     Check if a user exists by email or username
     
@@ -101,7 +101,7 @@ def authenticate_user(db: Session, email: str, password: str) -> Optional[User]:
     user = get_user_by_email(db, email)
     if not user:
         return None
-    if not verify_password(password, user.hashed_password):
+    if not verify_password(password, str(user.hashed_password)):
         return None
     return user
 
@@ -111,8 +111,8 @@ def create_user(
     email: str,
     username: str,
     password: str,
-    first_name: str = None,
-    last_name: str = None,
+    first_name: Optional[str] = None,
+    last_name: Optional[str] = None,
     role: str = "pending",
     is_approved: bool = False,
 ) -> User:

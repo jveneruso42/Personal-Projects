@@ -138,15 +138,10 @@ class BrandedAppBar extends ConsumerWidget implements PreferredSizeWidget {
                       final logoutService = ref.read(logoutServiceProvider);
                       if (onLogout != null) {
                         // Execute custom cleanup before logout
-                        logoutService.logout(
-                          context,
-                          ref,
-                          onBeforeLogout: onLogout,
-                        );
-                      } else {
-                        // Standard logout
-                        logoutService.logout(context, ref);
+                        onLogout!();
                       }
+                      // Perform logout
+                      logoutService.logout(context);
                     },
                   ),
                 ],
@@ -260,15 +255,10 @@ class BrandedSliverAppBar extends ConsumerWidget {
                       final logoutService = ref.read(logoutServiceProvider);
                       if (onLogout != null) {
                         // Execute custom cleanup before logout
-                        logoutService.logout(
-                          context,
-                          ref,
-                          onBeforeLogout: onLogout,
-                        );
-                      } else {
-                        // Standard logout
-                        logoutService.logout(context, ref);
+                        onLogout!();
                       }
+                      // Perform logout
+                      logoutService.logout(context);
                     },
                   ),
                 ],

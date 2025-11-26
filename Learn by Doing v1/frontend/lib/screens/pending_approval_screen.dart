@@ -107,7 +107,7 @@ class _PendingApprovalScreenState extends ConsumerState<PendingApprovalScreen> {
 
   String _getSeasonalImagePath() {
     final season = BackgroundProvider.getCurrentSeason();
-    switch (season.name) {
+    switch (season) {
       case 'winter':
         return 'assets/images/winter_waiting_place.jpg';
       case 'spring':
