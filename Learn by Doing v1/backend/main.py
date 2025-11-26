@@ -4,7 +4,7 @@ Simplified version with user authentication
 """
 
 from fastapi import FastAPI
-from fastAPI.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.routers import auth, users
 from app.database import engine, Base
